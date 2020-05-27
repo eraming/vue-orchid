@@ -3,13 +3,17 @@
     <div class="gallery-panel"
          v-for="photo in photos"
          :key="photo.id">
+    <router-link :to="`/photo/${photo.id}`">
       <img :src="thumbUrl(photo.filename)">
+    </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import photos from '@/photos.json';export default {
+import photos from '@/photos.json';
+
+export default {
   name: 'Gallery',
   data() {
     return {
@@ -24,7 +28,7 @@ import photos from '@/photos.json';export default {
 };
 </script>
 
-<style>
+<style scoped>
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));

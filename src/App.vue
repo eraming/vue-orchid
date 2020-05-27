@@ -3,6 +3,7 @@
     <navigation/>
     <router-view> </router-view>
      <Footer/>
+     <Gallery />
   </div>
 </template>
 

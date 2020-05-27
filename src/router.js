@@ -11,6 +11,12 @@ let router = new VueRouter({
         component: () =>import('./components/Lander')
       },
 
+      {
+        path:'/gallery',
+        name:'Gallery',
+        component: () =>import('./components/Gallery')
+      },
+
     ]
 });
 

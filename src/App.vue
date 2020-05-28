@@ -24,10 +24,12 @@ export default {
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-  html { font-size: 22px; }
+  html { font-size: 14px; }
 
   body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto',
+  sans-serif;
+  }
 
  a {
   color: #0094FF;

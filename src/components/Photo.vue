@@ -1,23 +1,13 @@
 <template>
   <div class="lightbox" @click.self="closeLightbox">
+
     <img :src="photoUrl(photo.filename)">
 
     <div class="lightbox-info">
       <div class="lightbox-info-inner">
         <p v-if="photo.title">{{ photo.title }}</p>
         <p v-if="photo.location">{{ photo.location }}</p>
-        <p v-if="photo.photographer">
-  <a rel="nofollow" :href="photo.photographer.url">
-    {{ photo.photographer.name }}
-  </a>
-</p>
 
-<p v-if="photo.source">
-  via
-  <a rel="nofollow" :href="photo.source.url">
-    {{ photo.source.name }}
-  </a>
-</p>
       </div>
     </div>
 
@@ -63,7 +53,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
@@ -80,7 +70,8 @@ export default {
 }
 
 .lightbox-info-inner {
-  background-color: #FFFFFF;
+  background-color: none;
+  color: white;
   display: inline-block;
   padding: 2rem;
 }

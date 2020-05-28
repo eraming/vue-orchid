@@ -32,16 +32,16 @@ export default {
 <style scoped>
 
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto, minmax(20rem, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     grid-gap: 1rem;
     max-width: 100rem;
-    margin: 5rem auto;
+    margin: 4rem auto;
     padding: 0 5rem;
   }
   .gallery-panel img {
     width: 100%;
-    height: 22vw;
+    height: 20vw;
     object-fit: cover;
     border-radius: 0.75rem;
   }

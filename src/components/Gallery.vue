@@ -33,15 +33,15 @@ export default {
 
   .gallery {
     display: flex;
-    flex-flow: nowrap;
+    flex-flow: wrap;
     grid-gap: 1rem;
     max-width: 100rem;
     margin: 4rem auto;
-    padding: 0 5rem;
+    padding: 0 7rem;
   }
   .gallery-panel img {
     width: 100%;
-    height: 20vw;
+    height: 15vw;
     object-fit: cover;
     border-radius: 0.75rem;
   }

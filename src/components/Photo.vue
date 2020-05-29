@@ -61,8 +61,10 @@ export default {
 
 .lightbox img {
   margin: auto;
-  width: 100%;
-  grid-column-start: 2;
+  max-width: 900px;
+  max-height: 100%;
+  /* grid-column-start: 2; */
+  padding: 3rem;
 }
 
 .lightbox-info {

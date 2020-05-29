@@ -33,7 +33,7 @@ export default {
 
   .gallery {
     display: flex;
-    flex-wrap: nowrap;
+    flex-flow: nowrap;
     grid-gap: 1rem;
     max-width: 100rem;
     margin: 4rem auto;

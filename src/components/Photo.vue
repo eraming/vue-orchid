@@ -47,12 +47,22 @@ export default {
 
 <style>
 
+@media (min-width: 768px), all {
+  .lightbox-info .lightbox img .lightbox {
+    position: absolute;
+    left: 50%;
+    text-align: left;
+    transform: translatex(-50%);
+  }
+}
+
 .lightbox {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 2;
   background-color: rgba(0, 0, 0, 0.85);
   display: grid;
   grid-template-columns: repeat(3, 1fr);

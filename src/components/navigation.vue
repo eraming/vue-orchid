@@ -42,7 +42,7 @@
   height: 100%;
    width: 50px;
    position: fixed;
-   z-index: 1;
+   z-index: 0;
    top: 0;
    left: 0;
    padding-left: 20px;

@@ -1,15 +1,23 @@
 <template>
   <div class="lightbox" @click.self="closeLightbox">
 
-    <img :src="photoUrl(photo.filename)">
+    <!-- <img :src="photoUrl(photo.filename)"> -->
+
+    <transition-group name="fade" tag="div">
+      <div v-for="i in [currentIndex]" :key="i">
+        <img :src="photoUrl(photo.filename)" />
+      </div>
+    </transition-group>
 
     <div class="lightbox-info">
       <div class="lightbox-info-inner">
         <p v-if="photo.title">{{ photo.title }}</p>
         <p v-if="photo.location">{{ photo.location }}</p>
-
       </div>
     </div>
+
+    <a class="prev" @click="prev" href="#">&#10094;</a>
+    <a class="next" @click="next" href="#">&#10095;</a>
 
    </div>
 </template>
@@ -23,6 +31,8 @@ export default {
   data() {
     return {
       photos,
+      currentIndex: 0,
+
     };
   },
 
@@ -32,16 +42,34 @@ export default {
         return photo.id === Number(this.$route.params.id);
       });
     },
+
+    currentImg: function() {
+      return this.photos[Math.abs(this.currentIndex) % this.photos.length];
+    }
+
+
   },
 
   methods: {
     photoUrl(filename) {
-      return require(`../images/${filename}`);
+      return require(`../images/photography/${filename}`);
     },
     closeLightbox() {
       this.$router.push('/gallery');
     },
-  }
+
+
+    //how to make the below loop through the json?
+
+    next: function() {
+      this.currentIndex += 1;
+    },
+    prev: function() {
+      this.currentIndex -= 1;
+    }
+
+  },
+
 };
 </script>
 
@@ -86,6 +114,51 @@ export default {
   color: white;
   display: inline-block;
   padding: 2rem;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.7s ease;
+  border-radius: 0 4px 4px 0;
+  text-decoration: none;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.9s ease;
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  width:100%;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  visibility: hidden;
+  width:100%;
+  opacity: 0;
 }
 
 </style>

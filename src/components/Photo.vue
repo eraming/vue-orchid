@@ -1,7 +1,13 @@
 <template>
   <div class="lightbox" @click.self="closeLightbox">
 
-    <img :src="photoUrl(photo.filename)">
+    <!-- <img :src="photoUrl(photo.filename)"> -->
+
+    <transition-group name="fade" tag="div">
+      <div v-for="i in [currentIndex]" :key="i">
+        <img :src="photoUrl(photo.filename)" />
+      </div>
+    </transition-group>
 
     <div class="lightbox-info">
       <div class="lightbox-info-inner">
@@ -24,7 +30,8 @@ export default {
   name: 'Photo',
   data() {
     return {
-      photos
+      photos,
+      currentIndex: 0,
 
     };
   },
@@ -35,21 +42,30 @@ export default {
         return photo.id === Number(this.$route.params.id);
       });
     },
+
+    currentImg: function() {
+      return this.photos[Math.abs(this.currentIndex) % this.photos.length];
+    }
+
+
   },
 
   methods: {
     photoUrl(filename) {
-      return require(`../images/${filename}`);
+      return require(`../images/photography/${filename}`);
     },
     closeLightbox() {
       this.$router.push('/gallery');
     },
 
+
+    //how to make the below loop through the json?
+
     next: function() {
-      this.$router.push(`/photo/2`);
+      this.currentIndex += 1;
     },
     prev: function() {
-      this.$router.push(`/photo/4`);
+      this.currentIndex -= 1;
     }
 
   },
@@ -126,6 +142,23 @@ export default {
 
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.9);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.9s ease;
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  width:100%;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  visibility: hidden;
+  width:100%;
+  opacity: 0;
 }
 
 </style>

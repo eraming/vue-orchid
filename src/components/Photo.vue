@@ -7,9 +7,11 @@
       <div class="lightbox-info-inner">
         <p v-if="photo.title">{{ photo.title }}</p>
         <p v-if="photo.location">{{ photo.location }}</p>
-
       </div>
     </div>
+
+    <a class="prev" @click="prev" href="#">&#10094;</a>
+    <a class="next" @click="next" href="#">&#10095;</a>
 
    </div>
 </template>
@@ -22,7 +24,8 @@ export default {
   name: 'Photo',
   data() {
     return {
-      photos,
+      photos
+
     };
   },
 
@@ -41,7 +44,16 @@ export default {
     closeLightbox() {
       this.$router.push('/gallery');
     },
-  }
+
+    next: function() {
+      this.$router.push(`/photo/2`);
+    },
+    prev: function() {
+      this.$router.push(`/photo/4`);
+    }
+
+  },
+
 };
 </script>
 
@@ -86,6 +98,34 @@ export default {
   color: white;
   display: inline-block;
   padding: 2rem;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.7s ease;
+  border-radius: 0 4px 4px 0;
+  text-decoration: none;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.9);
 }
 
 </style>

@@ -1,7 +1,7 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Photo from './views/Photo.vue'
+import Photo from './views/Photo.vue';
 
 Vue.use(VueRouter);
 
@@ -32,6 +32,8 @@ let router = new VueRouter({
          name:'Slider',
          component: () =>import('./components/Slider')
        },
+
+
     ],
 });
 

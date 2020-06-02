@@ -8,6 +8,7 @@
       <img :src="currentImg" />
     </div>
   </transition-group>
+
   <a class="prev" @click="prev" href="#">&#10094; Previous</a>
   <a class="next" @click="next" href="#">&#10095; Next</a>
 </div>
@@ -31,9 +32,9 @@ export default {
     };
   },
 
-  mounted: function() {
-    this.startSlide();
-  },
+  // mounted: function() {
+  //   this.startSlide();
+  // },
 
   methods: {
     next: function() {
@@ -53,7 +54,8 @@ export default {
 </script>
 
 <style scoped>
-  .fade-enter-active,
+
+.fade-enter-active,
 .fade-leave-active {
   transition: all 0.9s ease;
   overflow: hidden;

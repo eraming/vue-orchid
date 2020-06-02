@@ -2,7 +2,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Photo from './views/Photo.vue'
-// import Gallery from '@/components/Gallery'
 
 Vue.use(VueRouter);
 
@@ -26,6 +25,12 @@ let router = new VueRouter({
          path: '/photo/:id',
          name: 'photo',
          component: Photo,
+       },
+
+       {
+         path:'/slider',
+         name:'Slider',
+         component: () =>import('./components/Slider')
        },
     ],
 });

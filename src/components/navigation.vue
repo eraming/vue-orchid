@@ -32,23 +32,21 @@
 @media (min-width: 768px), all {
   .navbar-expand-md .navbar-toggler {
     position: absolute;
-    left: 50%;
+    left: 60%;
     text-align: left;
     transform: translatex(-50%);
   }
 }
 
 .navbar-expand-md{
-  height: 100%;
-   width: 50px;
+   height: 100%;
+   width: 10px;
    position: fixed;
    z-index: 0;
-   top: 0;
    left: 0;
-   padding-left: 20px;
-
-
-
+   padding-left: 50px;
+   padding-right: 50px;
+   margin-right: 10px;
  }
 
 </style>

@@ -2,9 +2,9 @@
   <div class="lightbox" @click.self="closeLightbox">
 
     <!-- <img :src="photoUrl(photo.filename)"> -->
-
     <transition-group name="fade" tag="div">
-      <div v-for="i in [currentIndex]" :key="i">
+
+      <div class="column" v-for="i in [currentIndex]" :key="i">
         <img :src="photoUrl(photo.filename)" />
       </div>
     </transition-group>
@@ -75,14 +75,13 @@ export default {
 
 <style>
 
-@media (min-width: 768px), all {
-  .lightbox-info .lightbox img .lightbox {
-    position: absolute;
-    left: 50%;
-    text-align: left;
-    transform: translatex(-50%);
+@media screen and (max-width: 500px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
   }
 }
+
 
 .lightbox {
   position: fixed;
@@ -98,7 +97,7 @@ export default {
 }
 
 .lightbox img {
-  margin: auto;
+  display: column;
   max-width: 900px;
   max-height: 100%;
   /* grid-column-start: 2; */

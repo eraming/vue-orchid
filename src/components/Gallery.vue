@@ -31,6 +31,14 @@ export default {
 
 <style scoped>
 
+
+  @media (min-width: 768px), all {
+    .gallery-panel img {
+      display: flex;
+      max-width: 50rem;
+    }
+  }
+
   .gallery {
     display: flex;
     flex-flow: wrap;
@@ -45,5 +53,6 @@ export default {
     object-fit: cover;
     border-radius: 0.75rem;
   }
+
 
 </style>

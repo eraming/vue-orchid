@@ -34,6 +34,13 @@ let router = new VueRouter({
        },
 
 
+       {
+         path:'/carousal',
+         name:'Carousal',
+         component: () =>import('./components/Carousal')
+       },
+
+
     ],
 });
 

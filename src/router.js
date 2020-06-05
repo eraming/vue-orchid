@@ -28,16 +28,9 @@ let router = new VueRouter({
        },
 
        {
-         path:'/slider',
-         name:'Slider',
-         component: () =>import('./components/Slider')
-       },
-
-
-       {
-         path:'/carousal',
-         name:'Carousal',
-         component: () =>import('./components/Carousal')
+         path:'/filmprojects',
+         name:'FilmProjects',
+         component: () =>import('./components/FilmProjects')
        },
 
 

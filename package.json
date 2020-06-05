@@ -13,7 +13,9 @@
     "core-js": "^3.6.5",
     "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
-    "vue-router": "^3.3.1"
+    "vue-images": "^1.1.0",
+    "vue-router": "^3.3.1",
+    "vueperslides": "^2.8.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",

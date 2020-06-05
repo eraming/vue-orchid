@@ -11,14 +11,14 @@
 
     <transition name="fade">
       <ul v-if="show">
-        <li v-for="item in items" :key="item"> {{item}} </li>
+        <li v-for="item in items" :key="item" >
+          <router-link :to="item.routeUrl" v-if="show"> {{item.name}}</router-link>
+        </li>
       </ul>
     </transition>
 
   </nav>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
+
 </div>
 
 
@@ -32,10 +32,24 @@ export default {
   data() {
     return {
       items: [
-        'Lorem',
-        'ipsum', 'dolor',
-        'sit',
-        'amet'
+        {
+          name: "Home",
+          routeUrl: "/"
+        },
+
+        {
+          name: "Photography",
+          routeUrl: "/gallery"
+        },
+
+        {
+          name: "Film Projects",
+          routeUrl: "/filmprojects"
+        },
+        {
+          name: "About",
+          routeUrl: "/about"
+        }
       ],
       show: false,
 
@@ -47,7 +61,7 @@ export default {
 
 <style lang="scss">
 
-@import url('https://fonts.googleapis.com/css?family=Karla');
+// @import url('https://fonts.googleapis.com/css?family=Karla');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 $color-purple: #523F79;
 $color-lavender: #807BE4;
@@ -55,10 +69,10 @@ $color-teal: #73CFF0;
 $color-sea: #AFFFEA;
 body {
   display: flex;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto', sans-serif;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 65vh;
 }
 
 nav {
@@ -91,7 +105,7 @@ li {
   height: 2em;
   justify-content: center;
   list-style-type: none;
-  text-transform: uppercase;
+
   transition: all .3s ease;
   &:hover {
     background-color: $color-lavender;
@@ -100,15 +114,14 @@ li {
 }
 
 #app {
-  align-items: center;
-  background-color: $color-teal;
+  align-items: left;
   display: flex;
   flex-direction: column;
   width: 500px;
   height: 850px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 3000px) {
   #app {
     width: 100vw;
     height: 100vh;
@@ -116,7 +129,6 @@ li {
 }
 
 .card {
-  background-color: $color-lavender;
   margin-bottom: 5%;
   width: 90%;
   height: 26%;
@@ -125,10 +137,10 @@ li {
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .3s ease;
-}
+// .fade-enter-active,
+// .fade-leave-active {
+//   topacity .2s ease;
+// }
 
 .fade-enter,
 .fade-leave-to {

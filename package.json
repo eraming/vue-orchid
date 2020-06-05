@@ -14,9 +14,8 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-clickaway": "^2.2.2",
-    "vue-router": "^3.3.1"
-    "vue-images": "^1.1.0",
     "vue-router": "^3.3.1",
+    "vue-images": "^1.1.0",
     "vueperslides": "^2.8.6"
   },
   "devDependencies": {

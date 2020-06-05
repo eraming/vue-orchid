@@ -1,52 +1,166 @@
 <template>
 
-  <div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <nav class="navbar navbar-expand-md navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnavbar" aria-controls="topnavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="topnavbar" class="collapse navbar-collapse">
-          <ul id="menu-main-menu" class="navbar-nav flex-column">
-            <li class="nav-item active">
-                <router-link to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-                <router-link to="/gallery">Photos</router-link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="col-md">
-    </div>
-  </div>
+
+<div id="app">
+  <nav>
+
+    <transition name="fade" mode="out-in">
+      <i class="material-icons menu" v-if="!show" @click="show = !show" key="menu">menu</i>
+      <i class="material-icons clear" v-else @click="show = !show" key="clear">clear</i>
+    </transition>
+
+    <transition name="fade">
+      <ul v-if="show">
+        <li v-for="item in items" :key="item"> {{item}} </li>
+      </ul>
+    </transition>
+
+  </nav>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
 </div>
 
 
 </template>
 
-<style>
+<script>
 
-@media (min-width: 768px), all {
-  .navbar-expand-md .navbar-toggler {
-    position: absolute;
-    left: 60%;
-    text-align: left;
-    transform: translatex(-50%);
+export default {
+  el: '#app',
+  name: 'navigation',
+  data() {
+    return {
+      items: [
+        'Lorem',
+        'ipsum', 'dolor',
+        'sit',
+        'amet'
+      ],
+      show: false,
+
+    };
   }
 }
 
-.navbar-expand-md{
-   height: 100%;
-   width: 10px;
-   position: fixed;
-   z-index: 0;
-   left: 0;
-   padding-left: 50px;
-   padding-right: 50px;
-   margin-right: 10px;
- }
+</script>
+
+<style lang="scss">
+
+@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+$color-purple: #523F79;
+$color-lavender: #807BE4;
+$color-teal: #73CFF0;
+$color-sea: #AFFFEA;
+body {
+  display: flex;
+  font-family: 'Karla', sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+nav {
+  background-color: $color-purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+
+ul {
+  align-self: flex-start;
+  background-color: $color-purple;
+  border-top: solid 3px $color-teal;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+
+li {
+  align-items: center;
+  color: $color-teal;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5em;
+  height: 2em;
+  justify-content: center;
+  list-style-type: none;
+  text-transform: uppercase;
+  transition: all .3s ease;
+  &:hover {
+    background-color: $color-lavender;
+    color: $color-sea;
+  }
+}
+
+#app {
+  align-items: center;
+  background-color: $color-teal;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 850px;
+}
+
+@media (max-width: 1024px) {
+  #app {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.card {
+  background-color: $color-lavender;
+  margin-bottom: 5%;
+  width: 90%;
+  height: 26%;
+  &:first-of-type {
+    margin-top: 5%;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.menu,
+.clear {
+  cursor: pointer;
+  font-size: 3em;
+  padding-left: 5%;
+  transition: all .3s ease;
+  width: 1.5em;
+}
+
+.menu {
+  color: $color-lavender;
+  &:hover,
+  &:active {
+    color: $color-teal;
+  }
+}
+
+.clear {
+  color: $color-teal;
+  &:hover,
+  &:active {
+    color: $color-lavender;
+  }
+}
+
+
+
 
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="lightbox" @click.self="closeLightbox">
 
-    <!-- <img :src="photoUrl(photo.filename)"> -->
-    <transition-group name="fade" tag="div">
+    <img :src="photoUrl(photo.filename)">
+    <!-- <transition-group name="fade" tag="div">
 
       <div class="column" v-for="i in [currentIndex]" :key="i">
         <img :src="photoUrl(photo.filename)" />
       </div>
-    </transition-group>
+    </transition-group> -->
 
     <div class="lightbox-info">
       <div class="lightbox-info-inner">
@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <a class="prev" @click="prev" href="#">&#10094;</a>
-    <a class="next" @click="next" href="#">&#10095;</a>
+    <!-- <a class="prev" @click="prev" href="#">&#10094;</a>
+    <a class="next" @click="next" href="#">&#10095;</a> -->
 
    </div>
 </template>
@@ -54,19 +54,11 @@ export default {
     photoUrl(filename) {
       return require(`../images/photography/${filename}`);
     },
+
     closeLightbox() {
       this.$router.push('/gallery');
     },
 
-
-    //how to make the below loop through the json?
-
-    next: function() {
-      this.currentIndex += 1;
-    },
-    prev: function() {
-      this.currentIndex -= 1;
-    }
 
   },
 
@@ -105,13 +97,14 @@ export default {
 }
 
 .lightbox-info {
+  flex-direction: column;
   margin: auto 2rem auto 0;
 }
 
 .lightbox-info-inner {
   background-color: none;
   color: white;
-  display: inline-block;
+  flex-direction: column;
   padding: 2rem;
 }
 

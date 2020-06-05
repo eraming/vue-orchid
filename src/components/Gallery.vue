@@ -23,7 +23,7 @@ export default {
 
   methods: {
     thumbUrl(filename) {
-      return require(`../images/thumbnails/${filename}`);
+      return require(`../images/photography/thumbnails/${filename}`);
     },
   },
 };

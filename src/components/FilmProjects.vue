@@ -1,9 +1,18 @@
 <template>
 
 
-  <vueper-slides>
-  <vueper-slide v-for="(slide, i) in slides" :key="i" :title="slide.title" :content="slide.content" />
+  <vueper-slides
+  :slide-ratio="1 / 2" fixed-height="300px"
+  >
+  <vueper-slide
+  v-for="(slide, i) in slides"
+  :key="i"
+  :title="slide.title"
+  :content="slide.content" />
+
 </vueper-slides>
+
+
 </template>
 
 
@@ -38,6 +47,8 @@ export default {
 
 <style>
 
+.vueperslides--fixed-height { height: 500px; }
+
 .vueperslide {
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 
@@ -47,12 +58,12 @@ export default {
   }
 }
 
-// documentation link.
+
 p {
   position: absolute;
-  top: 5px;
+  /* top: 5px; */
   right: 5px;
-  z-index: 10;
+  z-index: 0;
 }
 
 html {font: 12px Tahoma, Geneva, sans-serif;}

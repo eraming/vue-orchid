@@ -5,10 +5,11 @@
   :slide-ratio="1 / 2" fixed-height="300px"
   >
   <vueper-slide
-  v-for="(slide, i) in slides"
-  :key="i"
-  :title="slide.title"
-  :content="slide.content" />
+  v-for="photo in photos"
+  :key="photo.filename"
+ />
+<!-- <img :src="thumbUrl(photo.filename)"> -->
+
 
 </vueper-slides>
 
@@ -20,6 +21,7 @@
 
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
+import photos from '@/photos.json';
 
 
 export default {
@@ -27,6 +29,7 @@ export default {
 
   data() {
     return {
+      photos,
       slides: [
         {
           title: 'Slide #1',
@@ -37,10 +40,16 @@ export default {
           content: 'Slide content.'
         }
       ]
-
     }
 
-  }
+  },
+
+  // methods: {
+  //   thumbUrl(filename) {
+  //     return require(`../images/photography/thumbnails/${filename}`);
+  //   },
+  // },
+
 };
 
 </script>

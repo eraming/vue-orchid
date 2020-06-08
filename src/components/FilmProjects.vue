@@ -1,9 +1,14 @@
 <template>
 
+<div>
+  <h6>
+    THE CATCHING is about a young girl who wakes up in the woods.
+  </h6>
 
-  <vueper-slides
-  :slide-ratio="1 / 2" fixed-height="300px"
+  <vueper-slides slide-image-inside
+  :slide-ratio="1 / 2" fixed-height="250px"
   >
+
   <vueper-slide
   v-for="(slide, url) in slides"
   :key="url"
@@ -13,7 +18,7 @@
 
 </vueper-slides>
 
-
+</div>
 </template>
 
 
@@ -21,7 +26,6 @@
 
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
-import photos from '@/photos.json';
 
 
 export default {
@@ -29,7 +33,6 @@ export default {
 
   data() {
     return {
-      photos,
       slides: [
                 {
                   title: 'slide 1',
@@ -42,16 +45,14 @@ export default {
                 {
                   title: 'slide 3',
                   url: require('../images/project1/project1_3.png')
+                },
+                {
+                  title: 'slide 4',
+                  url: require('../images/project1/project1_4.png')
                  }
             ]
         }
   }
-
-  // methods: {
-  //   thumbUrl(filename) {
-  //     return require(`../images/photography/thumbnails/${filename}`);
-  //   },
-  // },
 
 };
 
@@ -59,15 +60,15 @@ export default {
 
 <style>
 
-.vueperslides--fixed-height { height: 500px; }
+.vueperslides--fixed-height { height: 400px; }
 
-.vueperslide {
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+.vueperslide__image {
+  transform: scale(1.2) rotate(-5deg);
+}
 
-  &__title {
-    font-size: 7em;
-    opacity: 0.6;
-  }
+.vueperslide__title {
+  font-size: 7em;
+  opacity: 0.7;
 }
 
 
@@ -78,7 +79,11 @@ p {
   z-index: 0;
 }
 
+h6 {
+  color: black; 
+}
+
 html {font: 12px Tahoma, Geneva, sans-serif;}
-* {margin: 0;padding: 0;color: #fff;}
+* {margin: 0;padding: 0;color: white;}
 
 </style>

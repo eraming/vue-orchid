@@ -30,7 +30,13 @@ let router = new VueRouter({
        {
          path:'/filmprojects',
          name:'FilmProjects',
-         component: () =>import('./components/FilmProjects')
+         component: () =>import('./components/filmprojects/Catching')
+       },
+
+       {
+         path:'/tincture',
+         name:'Tincture',
+         component: () =>import('./components/filmprojects/Tincture')
        },
 
 

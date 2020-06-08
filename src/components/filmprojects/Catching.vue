@@ -36,19 +36,19 @@ export default {
       slides: [
                 {
                   title: 'slide 1',
-                  url: require('../images/project1/project1_1.png')
+                  url: require('@/images/catching/project1_1.png')
                 },
                 {
                   title: 'slide 2',
-                  url: require('../images/project1/project1_2.png')
+                  url: require('@/images/catching/project1_2.png')
                 },
                 {
                   title: 'slide 3',
-                  url: require('../images/project1/project1_3.png')
+                  url: require('@/images/catching/project1_3.png')
                 },
                 {
                   title: 'slide 4',
-                  url: require('../images/project1/project1_4.png')
+                  url: require('@/images/catching/project1_4.png')
                  }
             ]
         }
@@ -63,7 +63,7 @@ export default {
 .vueperslides--fixed-height { height: 400px; }
 
 .vueperslide__image {
-  transform: scale(1.2) rotate(-5deg);
+  transform: scale(1.2) rotate(-2deg);
 }
 
 .vueperslide__title {
@@ -80,7 +80,7 @@ p {
 }
 
 h6 {
-  color: black; 
+  color: black;
 }
 
 html {font: 12px Tahoma, Geneva, sans-serif;}

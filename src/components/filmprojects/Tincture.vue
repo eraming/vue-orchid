@@ -1,9 +1,20 @@
 <template>
 
 <div class="desc">
-  <h6>
-    TINCTURE
+
+  <h5>
+    TINCTURE </h5>
+    <br>
+    <h6>
     On the eve of a reunion, Karine has a revelation about the loss of someone close to her.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Cras sed lorem massa.
+    Mauris dui felis, pulvinar vel velit eu, aliquam pretium lectus. </h6>
+    
+  <h6>  Aliquam et nibh urna. Integer a rutrum velit. Mauris fermentum massa eget lacus lacinia,
+    in porttitor felis efficitur. Fusce viverra ut nulla quis hendrerit. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit. Morbi elit neque, semper sollicitudin luctus non, rhoncus a lectus.
+    Ut sed vestibulum nisl. Morbi non lorem neque. Cras aliquam felis vel consequat vehicula. Fusce placerat,
+    felis at maximus lobortis, magna libero rutrum tellus, vitae interdum turpis libero id quam.
   </h6>
 
 
@@ -87,6 +98,12 @@ p {
 
 h6 {
   color: black;
+  padding: 10px;
+}
+
+h5 {
+  color: black;
+  padding: 10px;
 }
 
 html {font: 12px Tahoma, Geneva, sans-serif;}

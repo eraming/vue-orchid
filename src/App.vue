@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
+  /* @import url('https://fonts.googleapis.com/css?family=Roboto');
 
   html { font-size: 14px; }
 
@@ -44,5 +44,5 @@ a:hover { color: #0074C6; }
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
 </style>

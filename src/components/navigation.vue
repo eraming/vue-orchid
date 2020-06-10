@@ -4,7 +4,7 @@
   <vue-navigation-bar :options="navbarOptions" />
 
 
-   <router-view/>
+   <!-- <router-view/> -->
   <!-- <nav>
 
     <transition name="fade" mode="out-in">

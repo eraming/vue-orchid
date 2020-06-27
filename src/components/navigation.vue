@@ -2,27 +2,6 @@
 
 <div id="app">
   <vue-navigation-bar :options="navbarOptions" />
-
-
-   <!-- <router-view/> -->
-  <!-- <nav>
-
-    <transition name="fade" mode="out-in">
-      <i class="material-icons menu" v-if="!show" @click="show = !show" key="menu">menu</i>
-      <i class="material-icons clear" v-else @click="show = !show" key="clear">clear</i>
-    </transition>
-
-    <transition name="fade">
-      <ul v-if="show">
-        <li v-for="item in items" :key="item" >
-          <router-link :to="item.routeUrl" v-if="show"> {{item.name}}</router-link>
-        </li>
-      </ul>
-    </transition>
-
-  </nav>
-
-</div> -->
 </div>
 </template>
 
@@ -38,27 +17,7 @@ export default {
   name: 'navigation',
   data() {
     return {
-      // items: [
-      //   {
-      //     name: "Home",
-      //     routeUrl: "/"
-      //   },
-      //
-      //   {
-      //     name: "Photography",
-      //     routeUrl: "/gallery"
-      //   },
-      //
-      //   {
-      //     name: "Film Projects",
-      //     routeUrl: "/filmprojects"
-      //   },
-      //   {
-      //     name: "About",
-      //     routeUrl: "/about"
-      //   }
-      // ],
-      // show: false,
+   
       navbarOptions: {
                  elementId: 'main-navbar',
                  isUsingVueRouter: true,
@@ -118,10 +77,16 @@ export default {
                    }
                  ]
                }
-             }
-           }
 
+
+             }
+
+           ]
+         }
        }
+     }
+
+ }
 
 </script>
 
@@ -135,6 +100,25 @@ export default {
       background: darken(#ff3b30, 10%);
     }
   }
+
+  &__menu-options {
+    &--left {
+      color: red;
+    }
+  }
+
+  &__sub-menu-options {
+    &__option {
+
+      &__link {
+        color: black;
+        &:hover {
+
+        }
+      }
+
+}
+}
 }
 
 // @import url('https://fonts.googleapis.com/css?family=Karla');

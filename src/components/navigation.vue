@@ -17,7 +17,7 @@ export default {
   name: 'navigation',
   data() {
     return {
-   
+
       navbarOptions: {
                  elementId: 'main-navbar',
                  isUsingVueRouter: true,
@@ -76,17 +76,17 @@ export default {
                      ]
                    }
                  ]
-               }
+               
 
 
              }
 
-           ]
+
          }
        }
      }
 
- }
+
 
 </script>
 
